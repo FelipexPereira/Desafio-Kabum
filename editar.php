@@ -7,6 +7,11 @@ include_once("conexao.php");
 //Recuperar o id do registro        filtro por numero inteiro
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 var_dump($id);
+$query_cliente = "SELECT * FROM cliente WHERE id = $id";
+$result_cliente = $conn->prepare($query_cliente);
+$result_cliente->execute();
+
+$row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -46,13 +51,89 @@ var_dump($id);
             </div>
             <div>
                 <?php
-                if(empty($id)){
-
+                if(isset($_SESSION['msg'])){
+                  echo $_SESSION['msg'];
+                  unset($_SESSION['msg']);
                 }else{
                     
                 }
                 ?>
+                <div class="formulario">
+                  <form method="post" action="proc_editar.php">
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <div class="form-floating mb-3 mb-md-0">
+                                  <input class="form-control" id="inputNome" name="inputNome"  type="text" placeholder="Nome Fornecedor" value="<?php echo $row_cliente['nome'];?>"/>
+                                  <label for="inputNome">Nome</label>
+                                  <input class="form-control" id="inputId" name="inputId"  type="hidden" placeholder="ID" value="<?php echo $row_cliente['id'];?>"/>
+                                  <label for="inputNome">id</label>
+                              </div>
+                          </div>   
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                                  <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="inputEmail" value="<?php echo $row_cliente['email'];?>"/>
+                                  <label for="inputEmail">Email</label>
+                              </div>
+                          </div>                
+                      </div>
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <div class="form-floating mb-3 mb-md-0">
+                                  <input class="form-control" id="inputCpf" type="text" placeholder="CPF" name="inputCpf" value="<?php echo $row_cliente['cpf'];?>"/>
+                                  <label for="inputCpf">CPF</label>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                                  <input class="form-control" id="inputRg" type="text" placeholder="RG" name="inputRg" value="<?php echo $row_cliente['rg'];?>"/>
+                                  <label for="inputRg">RG</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <div class="form-floating mb-3 mb-md-0">
+                                  <input class="form-control" id="inputTelefone" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputTelefone" value="<?php echo $row_cliente['telefone'];?>"/>
+                                  <label for="inputTelefone">Telefone</label>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                                  <input class="form-control" id="inputCelular" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputCelular" value="<?php echo $row_cliente['celular'];?>"/>
+                                  <label for="inputCelular">Celular</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <div class="form-floating mb-3 mb-md-0">
+                                  <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Aniversário" name="inputDataNascimento" value="<?php echo $row_cliente['data_nascimento'];?>"/>
+                                  <label for="inputDataNascimento">Data de Nascimento</label>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-floating">
+                              <label for="inputStatus">
+                                  <input type="checkbox" id="inputStatus" name="InputStatus" value="InputStatus"> Ativo
+                              </label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row mb-3">
+                          <div class="btn-grid">
+                              <div class="mt-4 mb-0">
+                                  <div class="d-grid">
+                                      <input class="btn btn-primary btn-standard " type="submit" name="enviar" id="enviar" value="Salvar">
+                                  </div>
+                              </div>
+                              <div class="mt-4 mb-0">
+                                  <div class="d-grid"><a class="btn btn-primary btn-standard " href="index.html">Voltar</a></div>
+                              </div>
+                          </div>
+                      </div> 
+                  </form>
             </div>
+
         </div>
     </main>
     <footer class="py-4 bg-light mt-auto" style="position: absolute; bottom: 0; width: 100%;">
