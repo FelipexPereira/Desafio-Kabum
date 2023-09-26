@@ -6,11 +6,14 @@ include_once("conexao.php");
 
 //Recuperar o id do registro        filtro por numero inteiro
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-var_dump($id);
+//var_dump($id);
+//query do cliente do id recuperado
 $query_cliente = "SELECT * FROM cliente WHERE id = $id";
+//preparacao de query
 $result_cliente = $conn->prepare($query_cliente);
+//execucao de query
 $result_cliente->execute();
-
+//recuperar a linha do select
 $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
 ?>
 
@@ -36,7 +39,7 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="index.html">Introdução</a>
                   <a class="nav-link" href="cadastro.html">Cadastrar</a>
                   <a class="nav-link" href="lista.php">Clientes</a>
                 </div>
@@ -63,8 +66,9 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                       <div class="row mb-3">
                           <div class="col-md-6">
                               <div class="form-floating mb-3 mb-md-0">
-                                  <input class="form-control" id="inputNome" name="inputNome"  type="text" placeholder="Nome Fornecedor" value="<?php echo $row_cliente['nome'];?>"/>
+                                  <input class="form-control" id="inputNome" name="inputNome"  type="text" placeholder="Nome" value="<?php echo $row_cliente['nome'];?>"/>
                                   <label for="inputNome">Nome</label>
+                                  <!--ocultei esta linha para não poder editar o ID-->
                                   <input class="form-control" id="inputId" name="inputId"  type="hidden" placeholder="ID" value="<?php echo $row_cliente['id'];?>"/>
                                   <label for="inputNome">id</label>
                               </div>
@@ -139,7 +143,7 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
     <footer class="py-4 bg-light mt-auto" style="position: absolute; bottom: 0; width: 100%;">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">&copy; Kabum 2023</div>
+                    <div class="text-muted">&copy; FelipexPereira 2023</div>
                 </div>
             </div>
     </footer>

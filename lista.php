@@ -24,7 +24,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="index.html">Introdução</a>
                   <a class="nav-link" href="cadastro.html">Cadastrar</a>
                   <a class="nav-link" href="lista.php">Clientes</a>
                 </div>
@@ -61,7 +61,7 @@
     <footer class="py-4 bg-light mt-auto" style="position: fixed; bottom: 0; width: 100%;">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">&copy; Kabum 2023</div>
+                    <div class="text-muted">&copy; FelipexPereira 2023</div>
                 </div>
             </div>
       </footer>
