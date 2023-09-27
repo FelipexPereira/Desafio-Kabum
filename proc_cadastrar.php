@@ -36,7 +36,8 @@ if(!empty($dados['enviar'])){
     $cad_cliente->execute();
 
 //redireciona a pagina inicial
-    header("Location: index.html");
+    header("Location: cadastrar.html");
+    echo"<script language='javascript' type='text/javascript'>alert('Cadastrou!');</script>";
 
 //se o codigo não executar a aparece esta mensagem de erro
 }else{
