@@ -73,7 +73,7 @@
                         }
                     }";
                     echo "</style>";
-                    echo "<div class='div1' style='border: 3px solid rgb(0,0,255);'>";
+                    echo "<div class='div1' style='border: 3px solid rgb(0,0,0);'>";
                     echo "<hr>";
                     echo "<b>ID:  </b> $id <br>";
                     echo "<b>NOME:  </b> $nome <br>";
