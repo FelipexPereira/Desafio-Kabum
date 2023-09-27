@@ -4,7 +4,6 @@ main {
 
 .btn-styles {
     padding: 0.5rem 2rem;
-    margin-left: 0.8rem;
 }
 
 .div-main {
@@ -25,10 +24,4 @@ h3 {
     width: 50%;
 }
 
-@media screen and (min-width: 300px) and (max-width: 500px){
-  
-    .div1{
-        width: 70%;
-    }
-}
 

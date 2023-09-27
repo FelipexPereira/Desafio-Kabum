@@ -35,7 +35,7 @@
     <main>
         <div>
             <div style="margin-bottom: 5vh;">
-                <h3 class="display-2 fw-bold text-sm-center">Lista de Clientes</h3>
+                <h3 class="display-2 fw-bold text-center">Lista de Clientes</h3>
             </div>
             <div class="container">
               <div class="row">
@@ -50,8 +50,9 @@
                     extract($row_cliente);
                     echo "<style>";
                     echo ".div1 {
-                        width: 50%;
+                        width: 33%;
                         display: inline-block;
+                        margin: 2px;
                     }";
 
                     echo "@media screen and (max-width: 620px) {
@@ -62,8 +63,7 @@
 
                     echo "@media screen and (min-width: 621px) and (max-width: 1000px) {
                         .div1 {
-                            width: 50%;
-
+                            width: 49%;
                         }
                     }";
 
@@ -74,17 +74,17 @@
                     }";
                     echo "</style>";
                     echo "<div class='div1' style='border: 3px solid rgb(0,0,0);'>";
-                    echo "<hr>";
                     echo "<b>ID:  </b> $id <br>";
                     echo "<b>NOME:  </b> $nome <br>";
                     echo "<b>EMAIL: </b>$email <br>";
+                    echo "<div style='text-align: end;'>";
                     echo "<a href='edicao.php?id=$id'><b>Editar</b></a>";
-                    echo "<hr>";
+                    echo "</div>";
                     echo "</div>";
                   }
                 ?>
               </div>
-            </div>
+            </div> 
             
         </div>
     </main>

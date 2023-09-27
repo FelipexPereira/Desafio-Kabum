@@ -115,22 +115,22 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                                   <label for="inputDataNascimento">Data de Nascimento</label>
                               </div>
                           </div>
-                          <div class="col-md-6">
+                      </div>
+                      <div class="col-md-6">
                               <div class="form-floating">
                                 <input type="checkbox" id="inputStatus" name="inputStatus"
                                 <?php 
                                     if($row_cliente['status'] == 1){
                                     echo "checked";}
                                     ?>/>
-                                <label for="inputStatus">Ativo</label>
+                                <a style="font-size: 1.3rem;">Ativo</a>
                               </div>
                           </div>
-                      </div>
                       <div class="mt-4 mb-0 form-floating">
                         <div class="btn-grid">
                             <div class="col-md-6">
                                 <div class="mt-4 mb-0 form-floating b">
-                                <a class="btn btn-primary btn-standard btn-styles" href="index.html">Voltar</a>
+                                <a class="btn btn-primary btn-standard btn-styles" href="consultar.php">Voltar</a>
                                 </div>
                             </div>
                         </div>
