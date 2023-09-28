@@ -78,7 +78,7 @@
                     echo "<b>NOME:  </b> $nome <br>";
                     echo "<b>EMAIL: </b>$email <br>";
                     echo "<div style='text-align: end;'>";
-                    echo "<a href='edicao.php?id=$id'><b>Editar</b></a>";
+                    echo "<a href='proc_consultar.php?id=$id'><b>Consultar</b></a>";
                     echo "</div>";
                     echo "</div>";
                   }

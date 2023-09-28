@@ -30,9 +30,9 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
     <script src="js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="background-color: #F0F0F0;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="index.html">HOME</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,16 +66,16 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                       <div class="row mb-3">
                           <div class="col-md-6">
                               <div class="form-floating mb-3 mb-md-0">
-                                  <input class="form-control" id="inputNome" name="inputNome"  type="text" placeholder="Nome" value="<?php echo $row_cliente['nome'];?>"/>
+                                  <input class="form-control" id="inputNome" name="inputNome"  type="text" placeholder="Nome" disabled value="<?php echo $row_cliente['nome'];?>"/>
                                   <label for="inputNome">Nome</label>
                                   <!--ocultei esta linha para não poder editar o ID-->
-                                  <input class="form-control" id="inputId" name="inputId"  type="hidden" placeholder="ID" value="<?php echo $row_cliente['id'];?>"/>
+                                  <input class="form-control" id="inputId" name="inputId"  type="hidden" placeholder="ID" disabled value="<?php echo $row_cliente['id'];?>"/>
                                   <label for="input"></label>
                               </div>
                           </div>   
                           <div class="col-md-6">
                               <div class="form-floating">
-                                  <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="inputEmail" value="<?php echo $row_cliente['email'];?>"/>
+                                  <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="inputEmail" disabled value="<?php echo $row_cliente['email'];?>"/>
                                   <label for="inputEmail">Email</label>
                               </div>
                           </div>                
@@ -83,13 +83,13 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                       <div class="row mb-3">
                           <div class="col-md-6">
                               <div class="form-floating mb-3 mb-md-0">
-                                  <input class="form-control" id="inputCpf" type="text" placeholder="CPF" name="inputCpf" value="<?php echo $row_cliente['cpf'];?>"/>
+                                  <input class="form-control" id="inputCpf" type="text" placeholder="CPF" name="inputCpf" disabled value="<?php echo $row_cliente['cpf'];?>"/>
                                   <label for="inputCpf">CPF</label>
                               </div>
                           </div>
                           <div class="col-md-6">
                               <div class="form-floating">
-                                  <input class="form-control" id="inputRg" type="text" placeholder="RG" name="inputRg" value="<?php echo $row_cliente['rg'];?>"/>
+                                  <input class="form-control" id="inputRg" type="text" placeholder="RG" name="inputRg" disabled value="<?php echo $row_cliente['rg'];?>"/>
                                   <label for="inputRg">RG</label>
                               </div>
                           </div>
@@ -97,13 +97,13 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                       <div class="row mb-3">
                           <div class="col-md-6">
                               <div class="form-floating mb-3 mb-md-0">
-                                  <input class="form-control" id="inputTelefone" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputTelefone" value="<?php echo $row_cliente['telefone'];?>"/>
+                                  <input class="form-control" id="inputTelefone" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputTelefone" disabled value="<?php echo $row_cliente['telefone'];?>"/>
                                   <label for="inputTelefone">Telefone</label>
                               </div>
                           </div>
                           <div class="col-md-6">
                               <div class="form-floating">
-                                  <input class="form-control" id="inputCelular" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputCelular" value="<?php echo $row_cliente['celular'];?>"/>
+                                  <input class="form-control" id="inputCelular" type="tel" placeholder="(xx) xxxxx-xxxx" name="inputCelular" disabled value="<?php echo $row_cliente['celular'];?>"/>
                                   <label for="inputCelular">Celular</label>
                               </div>
                           </div>
@@ -111,14 +111,14 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                       <div class="row mb-3">
                           <div class="col-md-6">
                               <div class="form-floating mb-3 mb-md-0">
-                                  <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Aniversário" name="inputDataNascimento" value="<?php echo $row_cliente['data_nascimento'];?>"/>
+                                  <input class="form-control" id="inputDataNascimento" type="date" placeholder="Data de Aniversário" name="inputDataNascimento" disabled value="<?php echo $row_cliente['data_nascimento'];?>"/>
                                   <label for="inputDataNascimento">Data de Nascimento</label>
                               </div>
                           </div>
                       </div>
                       <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="checkbox" id="inputStatus" name="inputStatus"
+                              <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="inputStatus" name="inputStatus" disabled
                                 <?php 
                                     if($row_cliente['status'] == 1){
                                     echo "checked";}
@@ -141,10 +141,10 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
         </div>
     </main>
     <!-- fixar o footer -->
-    <footer class="py-4 bg-light mt-auto fixed-bottom ">
+    <footer class="py-4 bg-dark mt-auto fixed-bottom ">
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">
-                <div class="text-muted">&copy; FelipexPereira 2023</div>
+                <div class="text-muted"><b>&copy; FelipexPereira 2023</b></div>
             </div>
         </div>
     </footer>

@@ -30,9 +30,9 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
     <script src="js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="background-color: #F0F0F0;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="index.html">HOME</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,23 +115,21 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
                                   <label for="inputDataNascimento">Data de Nascimento</label>
                               </div>
                           </div>
-                          <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="checkbox" id="inputStatus" name="inputStatus"
+                      </div>
+                      <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="inputStatus" name="inputStatus"
                                 <?php 
                                     if($row_cliente['status'] == 1){
                                     echo "checked";}
                                     ?>/>
-                                <label for="inputStatus">Ativo</label>
+                                <a style="font-size: 1.3rem;">Ativo</a>
                               </div>
-                          </div>
-                      </div>
                       <div class="mt-4 mb-0 form-floating">
                         <div class="btn-grid">
                             <div class="col-md-6">
                                 <div class="mt-4 mb-0 form-floating b">
-                                <a class="btn btn-primary btn-standard btn-styles" href="index.html">Voltar</a>
-                                        <input class="btn btn-primary btn-standard btn-styles" type="submit" name="enviar" id="enviar" value="Salvar">
+                                    <a class="btn btn-primary btn-standard btn-styles" href="editar.php">Voltar</a>
+                                    <input class="btn btn-primary btn-standard btn-styles" type="submit" name="enviar" id="enviar" value="Salvar" style="margin-left: 1rem;">
                                 </div>
                             </div>
                         </div>
@@ -142,10 +140,10 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
         </div>
     </main>
     <!-- fixar o footer -->
-    <footer class="py-4 bg-light mt-auto fixed-bottom ">
+    <footer class="py-4 bg-dark mt-auto fixed-bottom ">
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">
-                <div class="text-muted">&copy; FelipexPereira 2023</div>
+            <div class="text-muted"><b>&copy; FelipexPereira 2023</b></div>
             </div>
         </div>
     </footer>
