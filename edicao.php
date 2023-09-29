@@ -49,9 +49,10 @@ $row_cliente = $result_cliente->fetch(PDO::FETCH_ASSOC);
           </nav>
     </header>
     <main>
-        <div class>
-            <div style="margin-bottom: 5vh;">
+        <div>
+            <div>
                 <h3 class="display-2 fw-bold text-sm-center">Editar Cadastro</h3>
+                <p class="text-center">Nesta interface, é possível editar as informações dos clientes e utilizar o botão "Ativo" para alternar o status de ativação do cliente.</p>
             </div>
             <div>
                 <?php

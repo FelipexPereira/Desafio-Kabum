@@ -34,8 +34,9 @@
     </header>
     <main>
         <div>
-            <div style="margin-bottom: 5vh;">
+            <div>
                 <h3 class="display-2 fw-bold text-sm-center">Clientes Ativos</h3>
+                <p class="text-center">Nesta interface, são exibidos apenas os clientes ativos. Ao clicar no botão "Consultar", você pode acessar e visualizar as informações desses clientes.</p>
             </div>
             <div>
               <?php

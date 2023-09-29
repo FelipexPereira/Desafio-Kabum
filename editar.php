@@ -34,8 +34,9 @@
     </header>
     <main>
         <div>
-            <div style="margin-bottom: 5vh;">
+            <div>
                 <h3 class="display-2 fw-bold text-sm-center">Lista de Clientes</h3>
+                <p class="text-center">Nesta interface, todos os clientes estão listados. Ao clicar no botão "Editar", você pode acessar e visualizar as informações desses clientes e fazer as edições necessárias.</p>
             </div>
             <div>
             <?php
